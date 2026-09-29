@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Apex Institute of Science & Technology (AIST) - Premier Institution for Engineering, Computer Science, Research & Innovation. NAAC A++ Accredited.">
+  <meta name="keywords" content="University, College, Engineering, Computer Science, Admissions, Higher Education, Research, Campus Life">
+  <title>Apex Institute of Science & Technology | AIST</title>
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Top Scroll Progress Indicator -->
+  <div id="scroll-progress"></div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast-container"></div>
+
+  <!-- Navigation Header -->
+  <header class="navbar" id="navbar">
+    <div class="container nav-container">
+      <a href="#" class="brand-logo" id="brand-logo">
+        <div class="logo-icon">
+          <i class="fa-solid fa-graduation-cap"></i>
+        </div>
+        <div class="brand-text">AIST <span>Apex</span></div>
+      </a>
+
+      <nav>
+        <ul class="nav-menu" id="nav-menu">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="#programs" class="nav-link">Programs</a></li>
+          <li><a href="#calculator" class="nav-link">Tuition Calc</a></li>
+          <li><a href="#campus" class="nav-link">Campus Life</a></li>
+          <li><a href="#admissions" class="nav-link">Admissions</a></li>
+          <li><a href="#events" class="nav-link">Events</a></li>
+          <li><a href="#faculty" class="nav-link">Faculty</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle-btn" id="theme-toggle-btn" title="Toggle Light/Dark Theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <button class="btn btn-secondary btn-sm" id="search-trigger-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <span class="shortcut-badge">Ctrl K</span>
+        </button>
+
+        <button class="btn btn-primary btn-sm" id="nav-apply-btn">
+          Apply Now <i class="fa-solid fa-arrow-right"></i>
+        </button>
+
+        <button class="mobile-toggle" id="mobile-toggle">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Spotlight Search Modal Overlay -->
+  <div class="search-modal" id="search-modal">
+    <div class="search-box-container">
+      <div class="search-input-wrapper">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="search-input" placeholder="Search courses, faculty, campus facilities, events..." autocomplete="off">
+        <span class="shortcut-badge">ESC</span>
+      </div>
+      <div class="search-results-list" id="search-results-list">
+        <!-- Live search items injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="badge badge-primary">
+          <i class="fa-solid fa-award"></i> NAAC A++ Accredited & Global Top 100
+        </div>
+        <h1 class="hero-title">
+          Empowering Next-Gen <span>Pioneers & Innovators</span>
+        </h1>
+        <p class="hero-description">
+          At Apex Institute of Science & Technology, we combine world-class research labs, cutting-edge AI curriculum, and mentorship to launch transformative global careers.
+        </p>
+        
+        <div class="hero-cta-group">
+          <a href="#programs" class="btn btn-primary btn-lg">
+            Explore Programs <i class="fa-solid fa-compass"></i>
+          </a>
+          <button class="btn btn-secondary btn-lg" id="hero-virtual-tour-btn">
+            <i class="fa-solid fa-circle-play"></i> Virtual Tour
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3 class="counter" data-target="98">0</h3>
+            <p>Placement Rate %</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="counter" data-target="45">0</h3>
+            <p>Degree Programs</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="counter" data-target="15000">0</h3>
+            <p>Active Students</p>
+          </div>
+          <div class="stat-item">
+            <h3 class="counter" data-target="120">0</h3>
+            <p>Patents Filed</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-img-container">
+          <img src="assets/hero.png" alt="Apex Institute Main Campus Building">
+        </div>
+        
+        <div class="glass-card hero-floating-card">
+          <div class="floating-icon">
+            <i class="fa-solid fa-microchip"></i>
+          </div>
+          <div class="floating-info">
+            <h4>AI & Quantum Hub</h4>
+            <p>$15M Innovation Center</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Accreditations & Partnerships Ribbon -->
+  <section class="ribbon-section">
+    <div class="container ribbon-flex">
+      <div class="ribbon-item">
+        <i class="fa-solid fa-certificate"></i> NAAC Grade A++
+      </div>
+      <div class="ribbon-item">
+        <i class="fa-solid fa-shield-halved"></i> ABET Accredited Engineering
+      </div>
+      <div class="ribbon-item">
+        <i class="fa-solid fa-ranking-star"></i> Top 10 University Ranking
+      </div>
+      <div class="ribbon-item">
+        <i class="fa-solid fa-handshake"></i> 120+ Corporate Partners
+      </div>
+    </div>
+  </section>
+
+  <!-- Academic Programs Explorer Section -->
+  <section class="programs-section section-padding" id="programs">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Academic Excellence</span>
+        <h2 class="section-title">Explore Our Degree Programs</h2>
+        <p class="section-desc">Choose from industry-aligned undergraduate, postgraduate, and doctoral degree programs engineered for tomorrow's challenges.</p>
+      </div>
+
+      <div class="filter-bar">
+        <button class="filter-btn active" data-filter="all">All Disciplines</button>
+        <button class="filter-btn" data-filter="cs">Computer Science & AI</button>
+        <button class="filter-btn" data-filter="eng">Engineering</button>
+        <button class="filter-btn" data-filter="business">Business & Tech Management</button>
+        <button class="filter-btn" data-filter="ds">Data Science & Cyber</button>
+      </div>
+
+      <div class="programs-grid" id="programs-grid">
+        <!-- Dynamic program cards rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Program Details Modal -->
+  <div class="modal-overlay" id="program-modal">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 id="modal-program-title">Program Title</h3>
+        <button class="modal-close-btn" id="close-program-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body" id="modal-program-body">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Interactive Tuition & Financial Aid Calculator -->
+  <section class="calculator-section section-padding" id="calculator">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Transparent Financial Planning</span>
+        <h2 class="section-title">Tuition & Financial Aid Estimator</h2>
+        <p class="section-desc">Calculate your estimated annual tuition fees, residence costs, and potential financial aid in real time.</p>
+      </div>
+
+      <div class="calc-grid">
+        <div class="calc-controls glass-card" style="padding: 2.5rem;">
+          <div class="form-group">
+            <label for="degree-select">Select Academic Level</label>
+            <select id="degree-select" class="form-select">
+              <option value="undergrad" selected>Undergraduate (B.Tech / B.S.)</option>
+              <option value="postgrad">Postgraduate (M.Tech / M.S.)</option>
+              <option value="doctorate">Doctorate (Ph.D.)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="residency-select">Residency Status</label>
+            <select id="residency-select" class="form-select">
+              <option value="in-state" selected>Domestic Student (In-State)</option>
+              <option value="out-state">Domestic Student (Out-of-State)</option>
+              <option value="international">International Student</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="housing-select">Campus Housing Preference</label>
+            <select id="housing-select" class="form-select">
+              <option value="residence-suite" selected>On-Campus Residence Suite</option>
+              <option value="standard-hostel">Standard Campus Hostel</option>
+              <option value="day-scholar">Day Scholar (No Housing)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="aid-slider">
+              Scholarship / Merit Aid Eligibility
+              <span id="aid-percentage-display" style="color: var(--primary);">25% Merit Grant</span>
+            </label>
+            <input type="range" id="aid-slider" class="range-slider" min="0" max="75" value="25" step="5">
+          </div>
+        </div>
+
+        <div class="calc-summary-card">
+          <div class="badge badge-accent"><i class="fa-solid fa-calculator"></i> Live Estimate Breakdown</div>
+          <div class="summary-total">
+            <div class="summary-total-label">Estimated Annual Total</div>
+            <div class="summary-total-price" id="calc-total-price">$16,500</div>
+            <div style="font-size: 0.8rem; color: var(--text-muted); margin-top: 0.25rem;">Includes Tuition, Residence & Tech Fees</div>
+          </div>
+
+          <div class="summary-breakdown">
+            <div class="breakdown-row">
+              <span>Base Annual Tuition:</span>
+              <span id="calc-base-tuition">$18,000</span>
+            </div>
+            <div class="breakdown-row">
+              <span>Housing & Dining:</span>
+              <span id="calc-housing-fee">$4,000</span>
+            </div>
+            <div class="breakdown-row">
+              <span>Lab & Library Facilities:</span>
+              <span>$1,200</span>
+            </div>
+            <div class="breakdown-row" style="color: var(--accent);">
+              <span>Scholarship Savings:</span>
+              <span id="calc-savings">-$6,700</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary btn-lg" style="width: 100%; margin-top: 1.75rem;" id="calc-apply-aid-btn">
+            Apply for Merit Financial Aid <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Virtual Campus Life Showcase -->
+  <section class="campus-section section-padding" id="campus">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Vibrant Campus Experience</span>
+        <h2 class="section-title">Life at Apex Institute</h2>
+        <p class="section-desc">Experience state-of-the-art facilities designed for immersive learning, collaboration, and student wellbeing.</p>
+      </div>
+
+      <div class="campus-tabs-header">
+        <button class="campus-tab-btn active" data-tab="library">
+          <i class="fa-solid fa-book-open"></i> Central Library
+        </button>
+        <button class="campus-tab-btn" data-tab="labs">
+          <i class="fa-solid fa-flask"></i> Research Labs
+        </button>
+        <button class="campus-tab-btn" data-tab="quad">
+          <i class="fa-solid fa-building-columns"></i> Main Campus Quad
+        </button>
+      </div>
+
+      <div class="tab-pane active" id="tab-library">
+        <div class="tab-image-container">
+          <img src="assets/library.png" alt="University Central Library">
+        </div>
+        <div class="tab-content-info">
+          <div class="badge badge-primary" style="margin-bottom: 0.75rem;">Open 24/7</div>
+          <h3>Modern Knowledge Hub</h3>
+          <p>Over 500,000 digital & printed volumes, quiet study pods, high-speed fiber internet, and collaborative conference centers.</p>
+          <div class="facility-highlights">
+            <div class="facility-item"><i class="fa-solid fa-check-circle"></i> Private Study Booths</div>
+            <div class="facility-item"><i class="fa-solid fa-check-circle"></i> Digital Archives</div>
+            <div class="facility-item"><i class="fa-solid fa-check-circle"></i> VR Learning Station</div>
+            <div class="facility-item"><i class="fa-solid fa-check-circle"></i> Cafe & Lounge</div>
+          </div>
+          <button class="btn btn-outline" id="tour-library-btn">
+            <i class="fa-solid fa-eye"></i> Explore 360° Library View
+          </button>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="tab-labs">
+        <div class="tab-image-container">
+          <img src="assets/lab.png" alt="Advanced AI Laboratory">
+        </div>
+        <div class="tab-content-info">
+          <div class="badge badge-accent" style="margin-bottom: 0.75rem;">Industry Standard</div>
+          <h3>Advanced Robotics & AI Center</h3>
+          <p>Equipped with GPU supercomputers, autonomous drone test rings, and quantum simulation rigs sponsored by top tech partners.</p>
+          <div class="facility-highlights">
+            <div class="facility-item"><i class="fa-solid fa-check-circle"></i> NVIDIA GPU Server Array</div>
+            <div class="facility-item"><i class="fa-solid fa-check-circle"></i> 3D Printing & Prototyping</div>
+            <div class="facility-item"><i class="fa-solid fa-check-circle"></i> Cyber Security Arena</div>
+            <div class="facility-item"><i class="fa-solid fa-check-circle"></i> Biotech Incubator</div>
+          </div>
+          <button class="btn btn-outline" id="tour-labs-btn">
+            <i class="fa-solid fa-eye"></i> Explore 360° Lab View
+          </button>
+        </div>
+      </div>
+
+      <div class="tab-pane" id="tab-quad">
+        <div class="tab-image-container">
+          <img src="assets/hero.png" alt="Main Campus Quad Lawn">
+        </div>
+        <div class="tab-content-info">
+          <div class="badge badge-warning" style="margin-bottom: 0.75rem;">Green Campus</div>
+          <h3>Sustainable Eco Campus</h3>
+          <p>120 acres of lush greenery, solar-powered campus shuttles, sports stadiums, and vibrant student center spaces.</p>
+          <div class="facility-highlights">
+            <div class="facility-item"><i class="fa-solid fa-check-circle"></i> Olympic Sports Complex</div>
+            <div class="facility-item"><i class="fa-solid fa-check-circle"></i> Eco Solar Canopy</div>
+            <div class="facility-item"><i class="fa-solid fa-check-circle"></i> Amphitheater</div>
+            <div class="facility-item"><i class="fa-solid fa-check-circle"></i> Student Dining Center</div>
+          </div>
+          <button class="btn btn-outline" id="tour-quad-btn">
+            <i class="fa-solid fa-eye"></i> Explore Campus Grounds
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Admissions Process & Interactive Wizard Modal -->
+  <section class="admissions-section section-padding" id="admissions">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Join Our Legacy</span>
+        <h2 class="section-title">4 Simple Steps to Admission</h2>
+        <p class="section-desc">We make the application process seamless, transparent, and accessible worldwide.</p>
+      </div>
+
+      <div class="steps-timeline">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h4>Choose Program</h4>
+          <p>Select your intended degree course and review prerequisite details.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h4>Online Application</h4>
+          <p>Fill out our digital wizard application with your academic records.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h4>Entrance & Interview</h4>
+          <p>Complete the AIST Entrance Test or submit national entrance scores.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <h4>Enrollment & Housing</h4>
+          <p>Receive your admission letter, confirm housing, and begin your journey.</p>
+        </div>
+      </div>
+
+      <div style="text-align: center;">
+        <button class="btn btn-primary btn-lg" id="launch-wizard-btn">
+          Start Admission Application <i class="fa-solid fa-paper-plane"></i>
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Multi-Step Admission Wizard Modal -->
+  <div class="modal-overlay" id="wizard-modal">
+    <div class="modal-card" style="max-width: 680px;">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-graduation-cap"></i> AIST Online Admission Wizard</h3>
+        <button class="modal-close-btn" id="close-wizard-modal"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <div class="modal-body">
+        <div class="wizard-steps-indicator">
+          <div class="wizard-step-item active" id="wiz-ind-1">
+            <span class="step-num-badge">1</span> Personal Info
+          </div>
+          <div class="wizard-step-item" id="wiz-ind-2">
+            <span class="step-num-badge">2</span> Academics
+          </div>
+          <div class="wizard-step-item" id="wiz-ind-3">
+            <span class="step-num-badge">3</span> Program
+          </div>
+          <div class="wizard-step-item" id="wiz-ind-4">
+            <span class="step-num-badge">4</span> Review
+          </div>
+        </div>
+
+        <form id="wizard-form">
+          <!-- Step 1 -->
+          <div class="wizard-form-page active" id="wiz-page-1">
+            <h4 style="margin-bottom: 1rem;">Step 1: Personal Details</h4>
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="wiz-name">Full Legal Name</label>
+              <input type="text" id="wiz-name" class="form-input" placeholder="e.g. Alex Mercer" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="wiz-email">Email Address</label>
+              <input type="email" id="wiz-email" class="form-input" placeholder="alex.mercer@example.com" required>
+            </div>
+            <div class="form-group">
+              <label for="wiz-phone">Phone Number</label>
+              <input type="tel" id="wiz-phone" class="form-input" placeholder="+1 (555) 019-2834" required>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="wizard-form-page" id="wiz-page-2">
+            <h4 style="margin-bottom: 1rem;">Step 2: Academic Background</h4>
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="wiz-school">Previous School / College</label>
+              <input type="text" id="wiz-school" class="form-input" placeholder="e.g. St. Jude High School / City College">
+            </div>
+            <div class="form-group">
+              <label for="wiz-gpa">Cumulative GPA / Score Percentage</label>
+              <input type="text" id="wiz-gpa" class="form-input" placeholder="e.g. 3.8 GPA or 92%">
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="wizard-form-page" id="wiz-page-3">
+            <h4 style="margin-bottom: 1rem;">Step 3: Program Selection</h4>
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="wiz-program-choice">Choice of Study</label>
+              <select id="wiz-program-choice" class="form-select">
+                <option value="B.Tech Computer Science & AI">B.Tech Computer Science & Artificial Intelligence</option>
+                <option value="B.Tech Robotics Engineering">B.Tech Robotics & Autonomous Systems</option>
+                <option value="M.S. Data Science & Cyber">M.S. Data Science & Cyber Security</option>
+                <option value="B.B.A Digital Business Management">B.B.A Digital Business Management</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="wiz-term">Intended Entry Semester</label>
+              <select id="wiz-term" class="form-select">
+                <option value="Fall 2026">Fall Semester 2026</option>
+                <option value="Spring 2027">Spring Semester 2027</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="wizard-form-page" id="wiz-page-4">
+            <h4 style="margin-bottom: 1rem;">Step 4: Application Summary</h4>
+            <div class="glass-card" style="padding: 1.25rem; font-size: 0.9rem;">
+              <p><strong>Applicant Name:</strong> <span id="summary-name">-</span></p>
+              <p><strong>Email:</strong> <span id="summary-email">-</span></p>
+              <p><strong>Program Selected:</strong> <span id="summary-program">-</span></p>
+              <p><strong>Entry Term:</strong> <span id="summary-term">-</span></p>
+            </div>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1rem;">
+              <i class="fa-solid fa-circle-info"></i> By submitting this form, you confirm that all entered academic information is accurate.
+            </p>
+          </div>
+
+          <div class="wizard-nav-buttons">
+            <button type="button" class="btn btn-secondary" id="wiz-prev-btn" style="visibility: hidden;">Previous</button>
+            <button type="button" class="btn btn-primary" id="wiz-next-btn">Next Step <i class="fa-solid fa-arrow-right"></i></button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Events & News Countdown Section -->
+  <section class="events-section section-padding" id="events">
+    <div class="container">
+      <div class="event-banner">
+        <div>
+          <div class="badge badge-accent" style="margin-bottom: 1rem;">Featured Event</div>
+          <h3>Global Innovation & AI Summit 2026</h3>
+          <p>Join keynote speakers from MIT, Google Brain, and Stanford for a 3-day symposium on autonomous AI and green tech.</p>
+          <button class="btn btn-secondary btn-lg" id="event-rsvp-btn">
+            RSVP for Summit <i class="fa-solid fa-calendar-check"></i>
+          </button>
+        </div>
+
+        <div class="countdown-timer">
+          <div class="timer-box">
+            <div class="timer-num" id="cd-days">42</div>
+            <div class="timer-label">Days</div>
+          </div>
+          <div class="timer-box">
+            <div class="timer-num" id="cd-hours">14</div>
+            <div class="timer-label">Hours</div>
+          </div>
+          <div class="timer-box">
+            <div class="timer-num" id="cd-mins">28</div>
+            <div class="timer-label">Mins</div>
+          </div>
+          <div class="timer-box">
+            <div class="timer-num" id="cd-secs">59</div>
+            <div class="timer-label">Secs</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-header" style="margin-bottom: 2.5rem;">
+        <span class="section-subtitle">Campus News</span>
+        <h2 class="section-title">Latest Announcements</h2>
+      </div>
+
+      <div class="news-grid">
+        <div class="news-card">
+          <div class="news-body">
+            <div class="news-date">AUGUST 18, 2026</div>
+            <h3 class="news-title">AIST Secures $10M Research Grant for Clean Quantum Energy</h3>
+            <p class="news-desc">The Department of Applied Physics has been awarded federal research funding to pioneer scalable quantum micro-reactors.</p>
+            <a href="#" class="read-more-link" style="font-weight: 700;">Read News <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-body">
+            <div class="news-date">AUGUST 12, 2026</div>
+            <h3 class="news-title">Students Win 1st Place in Global Autonomous Robotics Hackathon</h3>
+            <p class="news-desc">Team AIST Robotics outperformed 85 international universities with their solar-powered autonomous rescue rover.</p>
+            <a href="#" class="read-more-link" style="font-weight: 700;">Read News <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="news-card">
+          <div class="news-body">
+            <div class="news-date">AUGUST 05, 2026</div>
+            <h3 class="news-title">Fall 2026 Open House & Campus Discovery Day Announced</h3>
+            <p class="news-desc">Prospective students and families are invited to meet department heads, tour research facilities, and explore merit aid.</p>
+            <a href="#" class="read-more-link" style="font-weight: 700;">Read News <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faculty & Research Leaders -->
+  <section class="faculty-section section-padding" id="faculty">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">World-Class Educators</span>
+        <h2 class="section-title">Meet Our Distinguished Faculty</h2>
+        <p class="section-desc">Learn from globally renowned researchers, industry mentors, and award-winning scholars.</p>
+      </div>
+
+      <div class="faculty-grid">
+        <div class="faculty-card">
+          <div class="faculty-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+          <h3 class="faculty-name">Dr. Aris Thorne</h3>
+          <div class="faculty-role">Head of AI & Robotics</div>
+          <div class="faculty-dept">Ph.D. Stanford University</div>
+        </div>
+
+        <div class="faculty-card">
+          <div class="faculty-avatar"><i class="fa-solid fa-user-doctor"></i></div>
+          <h3 class="faculty-name">Dr. Elena Vance</h3>
+          <div class="faculty-role">Director of Quantum Physics</div>
+          <div class="faculty-dept">Ph.D. MIT Physics</div>
+        </div>
+
+        <div class="faculty-card">
+          <div class="faculty-avatar"><i class="fa-solid fa-user-tie"></i></div>
+          <h3 class="faculty-name">Prof. Marcus Brody</h3>
+          <div class="faculty-role">Dean of Business & FinTech</div>
+          <div class="faculty-dept">Ph.D. Harvard Business School</div>
+        </div>
+
+        <div class="faculty-card">
+          <div class="faculty-avatar"><i class="fa-solid fa-user-gear"></i></div>
+          <h3 class="faculty-name">Dr. Sophia Chen</h3>
+          <div class="faculty-role">Chair of Bio Engineering</div>
+          <div class="faculty-dept">Ph.D. Oxford University</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & Location Section -->
+  <section class="section-padding" id="contact" style="background: var(--bg-main);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-subtitle">Get In Touch</span>
+        <h2 class="section-title">We are Here to Help</h2>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+        <div class="glass-card" style="padding: 2.5rem;">
+          <h3 style="margin-bottom: 1.5rem;">Send Us a Message</h3>
+          <form id="contact-form">
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="contact-name">Your Name</label>
+              <input type="text" id="contact-name" class="form-input" placeholder="John Doe" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 1rem;">
+              <label for="contact-email">Email Address</label>
+              <input type="email" id="contact-email" class="form-input" placeholder="john@example.com" required>
+            </div>
+            <div class="form-group" style="margin-bottom: 1.5rem;">
+              <label for="contact-msg">Message</label>
+              <textarea id="contact-msg" class="form-input" rows="4" placeholder="How can we assist you?" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              Send Message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+        <div class="glass-card" style="padding: 2.5rem; display: flex; flex-direction: column; justify-content: space-between;">
+          <div>
+            <h3 style="margin-bottom: 1.5rem;">Campus Headquarters</h3>
+            <div style="display: flex; flex-direction: column; gap: 1.25rem; font-size: 0.95rem;">
+              <div>
+                <strong><i class="fa-solid fa-location-dot" style="color: var(--primary);"></i> Address:</strong><br>
+                100 Innovation Parkway, University Heights, Science District 90210
+              </div>
+              <div>
+                <strong><i class="fa-solid fa-envelope" style="color: var(--primary);"></i> Admissions Email:</strong><br>
+                admissions@apex-tech.edu
+              </div>
+              <div>
+                <strong><i class="fa-solid fa-phone" style="color: var(--primary);"></i> Helpline:</strong><br>
+                +1 (800) 555-APEX / +1 (555) 987-6543
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top: 2rem; border-top: 1px solid var(--border); padding-top: 1.5rem;">
+            <div style="font-weight: 700; margin-bottom: 0.5rem;">Admissions Office Hours:</div>
+            <div style="color: var(--text-muted); font-size: 0.9rem;">Monday – Friday: 8:00 AM – 6:00 PM EST</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Admissions Assistant Floating Widget -->
+  <button class="chat-widget-btn" id="chat-widget-btn" title="Ask AIST AI Admissions Assistant">
+    <i class="fa-solid fa-comment-dots"></i>
+    <span class="online-badge"></span>
+  </button>
+
+  <div class="chat-window" id="chat-window">
+    <div class="chat-header">
+      <div class="chat-header-info">
+        <i class="fa-solid fa-robot" style="font-size: 1.4rem;"></i>
+        <div>
+          <h4>AIST Campus Assistant</h4>
+          <p>Instant Answers 24/7</p>
+        </div>
+      </div>
+      <button class="modal-close-btn" id="close-chat-btn" style="color: #ffffff;"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+
+    <div class="chat-body" id="chat-body">
+      <div class="chat-msg bot">
+        Hello! I'm your AI Admissions Assistant. How can I help you today? You can select a quick question below or type your query.
+      </div>
+    </div>
+
+    <div class="chat-quick-chips">
+      <div class="quick-chip" data-question="When is the application deadline?">Deadline?</div>
+      <div class="quick-chip" data-question="What are the scholarship requirements?">Scholarships?</div>
+      <div class="quick-chip" data-question="What is the average placement package?">Placements?</div>
+      <div class="quick-chip" data-question="Are hostel facilities available?">Hostels?</div>
+    </div>
+
+    <div class="chat-input-area">
+      <input type="text" id="chat-input" placeholder="Type a message..." autocomplete="off">
+      <button class="chat-send-btn" id="chat-send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="brand-logo">
+            <div class="logo-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="brand-text">AIST <span>Apex</span></div>
+          </a>
+          <p class="footer-desc">
+            Apex Institute of Science & Technology is dedicated to nurturing research excellence, technological innovation, and futuristic leadership.
+          </p>
+          <div class="social-links">
+            <a href="#" class="social-icon"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" class="social-icon"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Quick Links</h4>
+          <div class="footer-links">
+            <a href="#programs">Academic Programs</a>
+            <a href="#calculator">Tuition & Financial Aid</a>
+            <a href="#campus">Virtual Campus Tour</a>
+            <a href="#admissions">Admission Guidelines</a>
+            <a href="#events">Upcoming Events</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Departments</h4>
+          <div class="footer-links">
+            <a href="#">Computer Science & AI</a>
+            <a href="#">Robotics & Automation</a>
+            <a href="#">Data Science & Cyber</a>
+            <a href="#">Biotechnology & Physics</a>
+            <a href="#">Management & FinTech</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Stay Connected</h4>
+          <p style="font-size: 0.85rem; margin-bottom: 1rem;">Subscribe to our official monthly campus newsletter.</p>
+          <form class="newsletter-form" id="newsletter-form">
+            <input type="email" placeholder="Enter your email" required>
+            <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Apex Institute of Science & Technology (AIST). All rights reserved. | NAAC A++ Accredited</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Custom JavaScript Logic -->
+  <script src="script.js"></script>
+</body>
+</html>
